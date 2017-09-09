@@ -14,7 +14,6 @@ const DatoGlobal  = {
 
     agregarDatos: function (event) {
         localStorage[DatoGlobal.variables.nombre.val()] = DatoGlobal.variables.comentario.val();
-        $('#container').empty();
         DatoGlobal.guardarDatos();
 
     },
