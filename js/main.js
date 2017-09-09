@@ -13,16 +13,17 @@ const DatoGlobal  = {
     },
 
     agregarDatos: function (event) {
-        localStorage[DatoGlobal.variables.nombre.val()] = DatoGlobal.variables.comentario.val();
+        localStorage.setItem(DatoGlobal.variables.nombre.val(), DatoGlobal.variables.comentario.val());
         DatoGlobal.guardarDatos();
 
     },
     
     guardarDatos: function(){
-        for(let clave in localStorage){
-            $('#container').append ( `<div class ='comentario'>
-                                      <h2> ${clave} </h2>
-                                      <p>${localStorage[clave]}</p></div>`);
+        for(let comentario in localStorage){
+            let dato1 = [comentario];
+            $('#container').append ( `<div class ='coment'>
+                                      <h2> ${comentario} </h2>
+                                      <p>  ${dato1} </p></div>`);
          $('#clave').val("");
          $('#valor').val("");
         }
